@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<title>Particle48</title>
+	</head>
+	<!-- --------------------------------------------------------------------- -->
+	<body onload="setTimeout(init, 100);">
+		<script type="text/javascript">
+			"use strict";
+
+			window._P = { con2d : null	};
+			var p_demo;
+			
+			function init() {
+				var canvas = document.getElementById('canvas');
+				_P.con2d = canvas.getContext('2d');
+
+				p_demo = new Demo();
+
+				setInterval(function() {	p_demo.adv();	p_demo.draw();	}, 30);
+			}
+
+			function changePS(n) {
+				p_demo.changePS(n);
+			}
+		</script>
+
+		<script type="text/javascript" src="Point.js"></script>
+		<script type="text/javascript" src="Range.js"></script>
+
+		<script type="text/javascript" src="AreaEmitter.js"></script>
+		<script type="text/javascript" src="RadialEmitter.js"></script>
+		<script type="text/javascript" src="PunctiformEmitter.js"></script>
+		<script type="text/javascript" src="ParticleSystem.js"></script>
+		<script type="text/javascript" src="RedParticle.js"></script>
+		<script type="text/javascript" src="HeavyParticle.js"></script>
+		<script type="text/javascript" src="AscendingParticle.js"></script>
+		<script type="text/javascript" src="HSineParticle.js"></script>
+		<script type="text/javascript" src="FrogParticle.js"></script>
+		<script type="text/javascript" src="FishParticle.js"></script>
+		<script type="text/javascript" src="RainParticle.js"></script>
+
+		<script type="text/javascript" src="Demo.js"></script>
+
+		<canvas id="canvas" width="600" height="600"></canvas>
+		<br />
+		<input type="button" onclick="changePS(0)" value="Flames"/>
+		<input type="button" onclick="changePS(1)" value="Heavy Particles"/>
+		<input type="button" onclick="changePS(2)" value="Radial Emitter"/>
+		<input type="button" onclick="changePS(3)" value="Frogs"/>
+		<input type="button" onclick="changePS(4)" value="Rain"/>
+		<input type="button" onclick="changePS(5)" value="Fish"/>
+		<input type="button" onclick="changePS(6)" value="Oscillating"/>
+
+	</body>
+</html>
