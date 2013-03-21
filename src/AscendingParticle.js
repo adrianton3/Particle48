@@ -7,7 +7,7 @@
 		this.dim = 8;
 		this.age = 0;
 		this.agelim = agelim;
-		this.color = 'rgba(20,20,250,0.7)';
+		this.color = 'rgba(20,' + Math.floor(Math.random() * 100) + ',255,0.7)';
 		this.alive = true;
 	}
 

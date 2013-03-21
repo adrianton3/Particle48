@@ -9,7 +9,7 @@
 		this.atenuator = atenuator;
 		this.age = 0;
 		this.agelim = agelim;
-		this.color = 'rgba(250,250,50,0.7)';
+		this.color = 'rgba(255,' + Math.floor(Math.random() * 100 + 155) + ',30,0.7)';
 		this.grav = 0.5;
 		this.alive = true;
 	}
@@ -36,7 +36,9 @@
 	HeavyParticle.prototype.draw = function() {
 		namespace.con2d.fillStyle = this.color;
 		namespace.con2d.fillRect(this.oop.x - 1, this.oop.y - 1, 3, 3);
+		namespace.con2d.fillRect((this.oop.x + this.op.x) / 2 - 1, (this.oop.y + this.op.y) / 2 - 1, 3, 3);
 		namespace.con2d.fillRect(this.op.x - 2, this.op.y - 2, 5, 5);
+		namespace.con2d.fillRect((this.op.x + this.p.x) / 2 - 2, (this.op.y + this.p.y) / 2 - 2, 5, 5);
 		namespace.con2d.fillRect(this.p.x - 3, this.p.y - 3, 7, 7);
 	}
 
